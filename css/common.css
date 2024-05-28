@@ -8,21 +8,21 @@
 }
 
 .inner {
-    max-width: 1170px;
+    max-width: 1290px;
     margin: 0 auto;
 }
 
 .tit {
-    max-width: 1170px;
+    max-width: 1290px;
     margin: 0 auto;
 }
 
 .default {
-    padding: 80px 0;
+    padding: 120px 0;
 }
 
 .default .tit {
-    max-width: 1170px;
+    max-width: 1290px;
     margin: 0 auto 40px auto;
 }
 

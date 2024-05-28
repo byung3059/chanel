@@ -11,11 +11,13 @@
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/slick.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/jquery.mb.YTPlayer.min.css">
 	<link rel="stylesheet" href="./css/style.css">
 
 	<script src="./js/jquery-1.12.4.js"></script>
 	<script src="./js/slick.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="./js/jquery.mb.YTPlayer.min.js"></script>
 	<script src="./js/custom.js"></script>
 </head>
 
@@ -24,7 +26,7 @@
 	<header class="header">
 
 		<div class="inner">
-			<h1><a href="">CHANEL</a></h1>
+			<h1 class="logo"><a href="">CHANEL</a></h1>
 
 			<nav class="gnb">
 				<ul>
@@ -73,6 +75,9 @@
 					<img src="./images/content01.jpg" alt="">
 				</div>
 				<div class="img_box">
+					<img src="./images/content04.jpg" alt="">
+				</div>
+				<div class="img_box">
 					<img src="./images/content02.jpg" alt="">
 				</div>
 			</div>
@@ -97,13 +102,16 @@
 				<div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
 
+
 			</div>
+
+			<div class="swiper-pagination"></div>
 		</section>
 
 		<section class="main_product default">
 			<div class="tit">
 				<h2>Bleu De CHANEL</h2>
-				<p>Perfume</p>
+				<p>상쾌하고 생동감 넘치는 아로마틱 우디 향수를 만나보세요.</p>
 			</div>
 
 			<div class="inner">
@@ -137,6 +145,18 @@
 						<a href="" class="ord">구매하기</a>
 					</figure>
 				</div>
+			</div>
+		</section>
+
+		<section class="main_movie default">
+			<div class="tit">
+				<h2>Bleu De CHANEL</h2>
+				<p>블루 드 샤넬 영상 촬영장에서 카메라가 멈춘 순간, 티모시 샬라메의 모습을 확인해 보세요.</p>
+			</div>
+
+			<div class="inner">
+				<div class="video_box"></div>
+				<div id="bgndVideo" class="player" data-property=""></div>
 			</div>
 		</section>
 

@@ -20,7 +20,6 @@
     transition: 0.2s;
 }
 
-
 .header .inner {
     position: relative;
     display: flex;
@@ -28,15 +27,20 @@
     height: 80px;
 }
 
-.header .inner h1 {
+.header .inner .logo a {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 300px;
+    height: 80px;
+    background: url(../images/logo_white.png)no-repeat left top/300px 80px;
 
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 4px;
+    text-indent: -9999px;
+}
+
+.header.on .logo a {
+    background: url(../images/logo.png)no-repeat left top/300px 80px;
 }
 
 .header .inner .gnb {
@@ -89,16 +93,15 @@
 
 .main_visual .visual .visual01 .desc p {
     display: block;
-    margin: 0 0 48px 0;
     font-size: 70px;
-    font-weight: 400;
+    font-weight: 100;
     color: #fff;
 }
 
 .main_visual .visual .visual01 .desc strong {
     display: block;
     font-size: 120px;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
 }
 
@@ -138,9 +141,7 @@
 
 
 
-.main_content {
-    padding: 80px 0;
-}
+.main_content {}
 
 .main_content .tit p {
     line-height: 24px;
@@ -166,8 +167,9 @@
 
 
 .main_banner {
-    padding: 80px 0;
+    padding: 120px;
     background: #f9f9f9;
+    position: relative;
 }
 
 .main_banner .tit {
@@ -205,18 +207,24 @@
     color: #fff
 }
 
-
-
-
-
-
-
-
-
-.main_product {
-    padding: 80px 0;
-    border-bottom: 1px solid #d9d9d9;
+.main_banner .swiper-pagination {
+    position: absolute;
+    bottom: 80px;
 }
+
+.main_banner .swiper-pagination .swiper-pagination-bullet-active {
+    background: #929292;
+}
+
+
+
+
+
+
+
+
+
+.main_product {}
 
 .main_product .inner {
     display: flex;
@@ -271,13 +279,35 @@
 
 
 
+.main_movie {
+    background: #f9f9f9;
+}
+
+.main_movie .inner .video_box {
+    height: 600px;
+}
+
+.main_movie .inner .video_box .mb_YTPBar .mb_YTPseekbar {
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 .footer {
-    color: #fff;
+    color: #999;
     background: #222;
 }
 
@@ -287,7 +317,7 @@
 }
 
 .footer .inner .customer {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #444;
 }
 
 .footer .inner .customer>ul {

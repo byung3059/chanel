@@ -12,14 +12,42 @@ $(function () {
 
     var swiper = new Swiper(".swiper", {
         loop: true,
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 30,
         centeredSlides: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: ".swiper-pagination",
+        },
     });
+
+
+
+
+
+
+
+
+    $('#bgndVideo').YTPlayer({
+        videoURL: 'https://youtu.be/mR1fQeRqUEY',
+        containment: '.main_movie .video_box',
+        showControls: true,
+        showYTLogo: false,
+        playOnlyIfVisible: true,
+        autoPlay: true,
+    })
+
+
+
+
+
+
+
+
+
 
     $('.to_top button').on('click', function () {
         $('html, body').animate({ scrollTop: 0, }, 300)
@@ -34,5 +62,6 @@ $(function () {
             $('.to_top').removeClass('on')
         }
     })
+
 
 })

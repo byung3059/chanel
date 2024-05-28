@@ -193,8 +193,10 @@
 }
 
 .main_banner .swiper .swiper-button-prev::after {
+    padding: 8px;
     font-size: 36px;
-    color: #fff
+    color: #fff;
+    background: #92929286
 }
 
 .main_banner .swiper .swiper-button-next {
@@ -203,8 +205,10 @@
 
 
 .main_banner .swiper .swiper-button-next::after {
+    padding: 8px;
     font-size: 36px;
-    color: #fff
+    color: #fff;
+    background: #92929286
 }
 
 .main_banner .swiper-pagination {

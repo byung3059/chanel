@@ -10,15 +10,20 @@
     right: 0;
     color: #fff;
     background: rgba(0, 0, 0, 0.15);
-    transition: 0.2s;
+    transition: 0.5s;
+}
 
+.header:hover {
+    transition: 0.5s;
+    color: #000000;
+    background: #fff;
 }
 
 .header.on {
     color: #000000;
     background: #fff;
     border-bottom: 1px solid #ddd;
-    transition: 0.2s;
+    transition: 0.5s;
 }
 
 .header .inner {
@@ -40,6 +45,10 @@
     text-indent: -9999px;
 }
 
+.header:hover .inner .logo a {
+    background: url(../images/logo.png)no-repeat left top/300px 80px;
+}
+
 .header.on .logo a {
     background: url(../images/logo.png)no-repeat left top/300px 80px;
 }
@@ -50,20 +59,80 @@
 
 .header .inner .gnb>ul {
     display: flex;
-    gap: 40px;
+    gap: 80px;
     height: 80px;
+}
+
+.header .inner .gnb>ul>li {
+    position: relative;
 }
 
 .header .inner .gnb>ul>li>a {
     display: block;
+    position: relative;
     line-height: 80px;
 }
 
+.header .inner .gnb>ul>li .sub {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 0;
+    z-index: 999;
 
-.header .util>a {
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+.header .inner .gnb:hover>ul>li .sub {
+    transition: height 0.5s;
+    height: 200px;
+}
+
+.gnb>ul>li .sub li a {
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    white-space: nowrap;
+}
+
+.gnb>ul>li .sub li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+.header .inner .gnb::before {
+    content: '';
+
+    position: fixed;
+    z-index: 900;
+
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 0;
+
+    transition: height 0.5s;
+    background: #fff;
+}
+
+.header .inner .gnb:hover::before {
+    border-bottom: 1px solid #ddd;
+    transition: height 0.5s;
+    height: 200px;
+}
+
+.header .util>a>i {
     display: block;
+    font-size: 29px;
     line-height: 80px;
 }
+
 
 
 
@@ -94,12 +163,12 @@
     transform: translate(-50%, -50%);
     max-width: 1290px;
     width: 100%;
-
     letter-spacing: 8px;
 }
 
 .main_visual .visual .visual01 .desc p {
     display: block;
+    text-indent: -6px;
     font-size: 70px;
     font-weight: 100;
     color: #fff;
@@ -107,6 +176,7 @@
 
 .main_visual .visual .visual01 .desc strong {
     display: block;
+    text-indent: -5px;
     font-size: 120px;
     font-weight: 700;
     color: #fff;
@@ -308,33 +378,32 @@
 
 
 .footer {
-    color: #999;
     background: #222;
 }
 
-.footer .customer {
+.footer .ft {
     text-align: center;
     font-style: normal;
 }
 
-.footer .inner .customer {
+.footer .inner .ft {
     border-bottom: 1px solid #444;
 }
 
-.footer .inner .customer>ul {
+.footer .inner .ft>ul {
     display: flex;
     gap: 40px;
     align-items: center;
     height: 100px;
-
-    font-size: 14px;
 }
 
-.footer .inner .customer>ul li {
+.footer .inner .ft>ul li {
     position: relative;
+    font-size: 16px;
+    color: #999;
 }
 
-.footer .inner .customer>ul li~li::before {
+.footer .inner .ft>ul li~li::before {
     content: '';
     position: absolute;
     height: 10px;
@@ -345,17 +414,18 @@
     background: #ddd;
 }
 
-.footer .inner .customer .b {
+.footer .inner .ft .b {
     font-size: 16px;
     font-weight: 800;
     color: #f9f9f9;
 }
 
-.footer .inner address {
+.footer .inner .fb address {
     padding: 40px 0;
     line-height: 24px;
     font-style: normal;
     font-size: 14px;
+    color: #999;
 }
 
 
@@ -387,8 +457,9 @@
 
 .to_top button i {
     padding: 16px;
-    background: #222;
-    color: #fff;
+    transform: rotate(90deg);
     font-size: 24px;
     border-radius: 50%;
+    color: #fff;
+    background: #222;
 }

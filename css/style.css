@@ -1,5 +1,5 @@
 * {
-    /* outline: 1px solid tomato; */
+    outline: 1px solid tomato;
 }
 
 .header {
@@ -11,6 +11,7 @@
     color: #fff;
     background: rgba(0, 0, 0, 0.15);
     transition: 0.2s;
+
 }
 
 .header.on {
@@ -58,6 +59,7 @@
     line-height: 80px;
 }
 
+
 .header .util>a {
     display: block;
     line-height: 80px;
@@ -68,6 +70,11 @@
 
 
 
+
+
+
+
+.main_visual {}
 
 .main_visual .visual {
     position: relative;
@@ -167,26 +174,13 @@
 
 
 .main_banner {
-    padding: 120px;
     background: #f9f9f9;
     position: relative;
 }
 
-.main_banner .tit {
-    margin: 0 auto 40px auto;
-}
-
-.main_banner .tit h2 {
-    margin: 0 0 16px 0;
-    font-size: 40px;
-    font-weight: 700;
-}
-
 .main_banner .tit p {
     line-height: 24px;
-    font-size: 16px;
 }
-
 
 .main_banner .swiper .swiper-button-prev {
     left: 10px;
@@ -202,7 +196,6 @@
 .main_banner .swiper .swiper-button-next {
     right: 10px;
 }
-
 
 .main_banner .swiper .swiper-button-next::after {
     padding: 8px;
@@ -233,6 +226,10 @@
 .main_product .inner {
     display: flex;
     gap: 30px;
+}
+
+.main_product .inner>* {
+    flex: 1;
 }
 
 .main_product .inner .itm .img_box {

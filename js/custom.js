@@ -10,7 +10,12 @@ $(function () {
         }
     })
 
-    var swiper = new Swiper(".swiper", {
+
+
+
+
+
+    var swiper = new Swiper(".banner_slide", {
         loop: true,
         slidesPerView: 2,
         spaceBetween: 30,
@@ -28,9 +33,6 @@ $(function () {
 
 
 
-
-
-
     $('#bgndVideo').YTPlayer({
         videoURL: 'https://youtu.be/mR1fQeRqUEY',
         containment: '.main_movie .video_box',
@@ -39,10 +41,6 @@ $(function () {
         playOnlyIfVisible: true,
         autoPlay: true,
     })
-
-
-
-
 
 
 

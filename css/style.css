@@ -133,6 +133,14 @@
     line-height: 80px;
 }
 
+.header .inner .mbtn {
+    display: none;
+}
+
+
+
+
+
 
 
 
@@ -352,6 +360,10 @@
 
 .main_movie {
     background: #f9f9f9;
+}
+
+.main_movie .tit p {
+    line-height: 24px;
 }
 
 .main_movie .inner .video_box {

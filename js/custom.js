@@ -10,18 +10,9 @@ $(function () {
         }
     })
 
-
-
-    // var swiper = new Swiper(".content_slide", {
-    //     loop: true,
-    //     slidesPerView: 1,
-    //     breakpoints: {
-    //         769: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 30,
-    //         },
-    //     },
-    // });
+    $('.header .mbtn').on('click', function () {
+        $('.header .gnb').toggleClass('on')
+    })
 
 
     var swiper = new Swiper(".banner_slide", {
@@ -85,7 +76,7 @@ $(function () {
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
         console.log(sct);
-        if (sct > 900) {
+        if (sct > 830) {
             $('.to_top').addClass('on')
         } else {
             $('.to_top').removeClass('on')

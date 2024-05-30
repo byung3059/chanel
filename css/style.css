@@ -14,9 +14,13 @@
 }
 
 .header:hover {
-    transition: 0.5s;
     color: #000000;
+    transition: 0.5s;
     background: #fff;
+}
+
+.header:hover .inner .logo {
+    filter: grayscale(1.1) brightness(0);
 }
 
 .header.on {
@@ -26,40 +30,28 @@
     transition: 0.5s;
 }
 
+.header.on .logo {
+    filter: grayscale(1.1) brightness(0);
+}
+
 .header .inner {
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
 }
 
-.header .inner .logo a {
+.header .inner .logo {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 80px;
-    background: url(../images/logo_white.png)no-repeat left top/300px 80px;
-
-    text-indent: -9999px;
-}
-
-.header:hover .inner .logo a {
-    background: url(../images/logo.png)no-repeat left top/300px 80px;
-}
-
-.header.on .logo a {
-    background: url(../images/logo.png)no-repeat left top/300px 80px;
-}
-
-.header .inner .gnb {
-    margin: 0 auto 0 0;
+    transform: translate(-50%, 0);
 }
 
 .header .inner .gnb>ul {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     height: 80px;
 }
 
@@ -71,7 +63,9 @@
     display: block;
     position: relative;
     line-height: 80px;
+    white-space: nowrap;
 }
+
 
 .header .inner .gnb>ul>li .sub {
     position: absolute;
@@ -81,7 +75,6 @@
     z-index: 999;
 
     overflow: hidden;
-    transition: height 0.5s;
 }
 
 .header .inner .gnb:hover>ul>li .sub {
@@ -92,7 +85,7 @@
 .gnb>ul>li .sub li a {
     display: inline-block;
     position: relative;
-    line-height: 40px;
+    line-height: 48px;
     white-space: nowrap;
 }
 
@@ -117,7 +110,6 @@
     right: 0;
     height: 0;
 
-    transition: height 0.5s;
     background: #fff;
 }
 
@@ -127,9 +119,11 @@
     height: 200px;
 }
 
-.header .util>a>i {
+.header .util>a {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: block;
-    font-size: 24px;
     line-height: 80px;
 }
 
@@ -138,16 +132,106 @@
 }
 
 @media(max-width:768px) {
-    .header .inner .logo a {
-        left: 60px;
+    .header {
+        position: sticky;
+        color: #000;
+        background: #fff;
     }
 
-    .header .gnb {
+    .header .inner .logo {
+        z-index: 1000;
+        position: absolute;
+        top: 0;
+        left: 16px;
+        transform: translate(0);
+        width: 120px;
+        height: 80px;
+        background: url(../images/logo_left.png)no-repeat center left/cover;
+    }
+
+    .header .inner .logo a {
+        display: block;
+        width: 80px;
+        height: 80px;
+    }
+
+    .header .inner .logo img {
+        display: none;
+    }
+
+    .header .inner .gnb {
+        position: fixed;
+        z-index: 1001;
+        top: 0;
+        left: -100%;
+        background: #fff;
+        width: calc(100% - 90px);
+        height: 100vh;
+
+        padding: 120px 16px;
+        border-right: 1px solid #ddd;
+
+        transition: 0.5s;
+    }
+
+    .header .inner .gnb>ul {
+        flex-direction: column;
+        height: 0;
+        gap: 0;
+    }
+
+    .header .inner .gnb>ul>li>a {
+        line-height: 48px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .inner .gnb::before {
+        display: none;
+    }
+
+    .header .inner .gnb::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 320px;
+        height: 80px;
+        background: url(../images/logo_left.png)no-repeat center center;
+    }
+
+    .header .gnb.on {
+        left: 0%;
+    }
+
+    .header .gnb .sub {
         display: none;
     }
 
     .header .util {
         display: none;
+    }
+
+    .header .inner .mbtn {
+        z-index: 1000;
+        position: absolute;
+        display: block;
+        right: 16px;
+        font-size: 32px;
+        border: none;
+        background: transparent;
+        color: #fff;
+    }
+
+    .header .inner .mbtn i {
+        color: #000;
+    }
+
+    .header.on .inner .mbtn i {
+        color: #000;
+    }
+
+    .header:hover .inner .mbtn i {
+        color: #000;
     }
 }
 
@@ -234,8 +318,8 @@
 
 @media(max-width:768px) {
     .main_visual .visual .visual01 {
-        height: 800px;
-        background: url(../images/main_visual-768px.jpg) no-repeat center top/cover;
+        height: 700px;
+        background: url(../images/main_visual-800px.jpg) no-repeat left top/cover;
     }
 
     .main_visual .visual .visual01 .desc {
@@ -254,7 +338,7 @@
 @media(max-width:430px) {
     .main_visual .visual .visual01 {
         height: 600px;
-        background: url(../images/main_visual-768px.jpg) no-repeat center top/cover;
+        background: url(../images/main_visual-600px.jpg) no-repeat center top/cover;
     }
 }
 
@@ -374,6 +458,10 @@
     position: relative;
 }
 
+.main_product .tit p {
+    line-height: 24px;
+}
+
 .main_product .inner {
     display: flex;
     gap: 30px;
@@ -428,6 +516,10 @@
 
 
 @media(max-width:768px) {
+    .main_product .inner .itm .img_box img:hover {
+        transform: scale(1);
+    }
+
     .main_product .product_slide .swiper-slide img {
         width: 100%;
     }
@@ -625,5 +717,10 @@
     .to_top {
         bottom: 16px;
         right: 16px;
+    }
+
+    .to_top button i {
+        padding: 16px;
+        font-size: 16px;
     }
 }

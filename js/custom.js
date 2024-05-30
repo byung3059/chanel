@@ -12,14 +12,28 @@ $(function () {
 
 
 
-
+    // var swiper = new Swiper(".content_slide", {
+    //     loop: true,
+    //     slidesPerView: 1,
+    //     breakpoints: {
+    //         769: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 30,
+    //         },
+    //     },
+    // });
 
 
     var swiper = new Swiper(".banner_slide", {
         loop: true,
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 30,
         centeredSlides: true,
+        breakpoints: {
+            769: {
+                slidesPerView: 2,
+            },
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -30,6 +44,22 @@ $(function () {
         },
     });
 
+
+    var swiper = new Swiper(".product_slide", {
+        loop: true,
+
+        slidesPerView: 1,
+        breakpoints: {
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+        navigation: {
+            nextEl: '.main_product .arrows .next',
+            prevEl: '.main_product .arrows .prev',
+        },
+    });
 
 
 

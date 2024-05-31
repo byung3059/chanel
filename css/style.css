@@ -36,6 +36,7 @@
 
 .header .inner {
     position: relative;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,6 +48,10 @@
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+.header .inner .gnb {
+    z-index: 999;
 }
 
 .header .inner .gnb>ul {
@@ -103,9 +108,9 @@
     content: '';
 
     position: fixed;
-    z-index: 900;
+    z-index: 1;
 
-    top: 80px;
+    top: 800px;
     left: 0;
     right: 0;
     height: 0;
@@ -116,7 +121,7 @@
 .header .inner .gnb:hover::before {
     border-bottom: 1px solid #ddd;
     transition: height 0.5s;
-    height: 200px;
+    height: 300px;
 }
 
 .header .util>a {
@@ -297,10 +302,10 @@
 .main_visual .scrolldown::before {
     content: '';
     position: absolute;
-    bottom: 24px;
+    bottom: 48px;
     left: -15px;
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     border-top: 2px solid #fff;
     transform: rotate(-135deg);
 }
@@ -308,10 +313,10 @@
 .main_visual .scrolldown::after {
     content: '';
     position: absolute;
-    bottom: 24px;
+    bottom: 48px;
     left: -16px;
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     border-top: 2px solid #fff;
     transform: rotate(135deg);
 }
@@ -408,7 +413,7 @@
 }
 
 .main_banner .swiper .swiper-button-prev {
-    left: 10px;
+    left: 2px;
 }
 
 .main_banner .swiper .swiper-button-prev::after {
@@ -419,7 +424,7 @@
 }
 
 .main_banner .swiper .swiper-button-next {
-    right: 10px;
+    right: 2px;
 }
 
 .main_banner .swiper .swiper-button-next::after {
@@ -660,13 +665,37 @@
     color: #f9f9f9;
 }
 
-.footer .inner .fb address {
+.footer .inner .fb {
+    position: relative;
     padding: 40px 0;
     line-height: 24px;
     font-style: normal;
     font-size: 14px;
     color: #999;
 }
+
+.footer .inner .fb>ul {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.footer .inner .fb>ul>li {
+    position: relative;
+}
+
+.footer .inner .fb>ul>li~li::before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 1px;
+    top: 50%;
+    left: -4px;
+    transform: translate(-50%, -50%);
+    background: #999;
+}
+
+
 
 @media(max-width:768px) {
     .footer {
